@@ -1,8 +1,7 @@
 import time
-import sys
 import os
 
-#ЕРМОЛАЕВ ДЕНИС ДМИТРИЕВИЧ 559733
+# ЕРМОЛАЕВ ДЕНИС ДМИТРИЕВИЧ 559733
 
 BLUE = '\u001b[44m'
 RED = '\u001b[41m'
@@ -13,49 +12,49 @@ ERASE = '\x1B[2K'
 BEGIN = '\x1B[1G'
 
 
-#задание 1
+# задание 1
 def flag():
     pixel = '    '
-    lenght = 10
+    length = 10
     height = 9
 
     for i in range(height):
         if i < height // 3:
-            print(RED + pixel * lenght + RESET)
+            print(RED + pixel * length + RESET)
         elif i < height // 3 * 2:
-            print(WHITE + pixel * lenght + RESET)
+            print(WHITE + pixel * length + RESET)
         else:
-            print(BLUE + pixel * lenght + RESET)
+            print(BLUE + pixel * length + RESET)
 
 
-#задание 2
+# задание 2
 def uzor():
     pixel = '   '
-    lenght = 9
+    length = 9
     height = 9
 
     for i in range(height):
         if i == 0:
-            print(BLACK + pixel * i + WHITE + pixel + BLACK + pixel * (lenght - i * 2 - 2) \
-                  + WHITE + pixel + BLACK + pixel * i + BLACK + pixel * (lenght - 2) + WHITE + pixel + RESET)
+            print(BLACK + pixel * i + WHITE + pixel + BLACK + pixel * (length - i * 2 - 2) \
+                  + WHITE + pixel + BLACK + pixel * i + BLACK + pixel * (length - 2) + WHITE + pixel + RESET)
         elif i < height // 2:
-            print(BLACK + pixel * i + WHITE + pixel + BLACK + pixel * (lenght - i * 2 - 2) \
+            print(BLACK + pixel * i + WHITE + pixel + BLACK + pixel * (length - i * 2 - 2) \
                   + WHITE + pixel + BLACK + pixel * i + BLACK + pixel * (i - 1) \
-                  + WHITE + pixel + BLACK + pixel * (lenght - i * 2 - 2) + WHITE + pixel + BLACK + pixel * i + RESET)
+                  + WHITE + pixel + BLACK + pixel * (length - i * 2 - 2) + WHITE + pixel + BLACK + pixel * i + RESET)
         elif i == height // 2:
             print(BLACK + pixel * i + WHITE + pixel + BLACK + pixel * i + BLACK + pixel * (i - 1) \
                   + WHITE + pixel + BLACK + pixel * i + RESET)
         elif i > height // 2 and i != height - 1:
-            print(BLACK + pixel * (lenght - i - 1) + WHITE + pixel + BLACK + pixel * (i * 2 - lenght) \
-                  + WHITE + pixel + BLACK + pixel * (lenght - i - 1) \
-                  + BLACK + pixel * (lenght - i - 2) + WHITE + pixel + BLACK + pixel * (i * 2 - lenght) \
-                  + WHITE + pixel + BLACK + pixel * (lenght - i - 1) + RESET)
+            print(BLACK + pixel * (length - i - 1) + WHITE + pixel + BLACK + pixel * (i * 2 - length) \
+                  + WHITE + pixel + BLACK + pixel * (length - i - 1) \
+                  + BLACK + pixel * (length - i - 2) + WHITE + pixel + BLACK + pixel * (i * 2 - length) \
+                  + WHITE + pixel + BLACK + pixel * (length - i - 1) + RESET)
         else:
-            print(WHITE + pixel + BLACK + pixel * (lenght - 2) \
-                  + WHITE + pixel + BLACK + pixel * (lenght - 2) + WHITE + pixel + RESET)
+            print(WHITE + pixel + BLACK + pixel * (length - 2) \
+                  + WHITE + pixel + BLACK + pixel * (length - 2) + WHITE + pixel + RESET)
 
 
-#задание 3
+# задание 3
 def animation():
     pixel = '   '
     k = 0
@@ -102,7 +101,7 @@ def animation():
             k = 0
 
 
-#задание 4
+# задание 4
 def sequence():
     file = open('sequence.txt', 'r')
     odds = []
@@ -120,15 +119,15 @@ def sequence():
     print(f'{RED}{" " * int(round(sum(evens), 2) / 20)}{RESET} {round(sum(evens), 2)/(round(sum(odds), 2) + round(sum(evens), 2)) * 100}%')
 
 
-#задание 5(доп задание)
+# задание 5(доп задание)
 def function():
     print('y = 2x')
     height = 20
-    lenght = 10
+    length = 10
     pixel = '   '
     for i in range(height, 0, -1):
         print(i if i > 9 else f'{i} ', '|', BLACK + pixel * (i // 2 - 1) \
-              + WHITE + pixel + BLACK + pixel * (lenght - (i // 2 if i > 1 else 1)) + RESET)
+              + WHITE + pixel + BLACK + pixel * (length - (i // 2 if i > 1 else 1)) + RESET)
     print("  ", ' ', '___' * 10)
     print(0, '   ', 1, '', 2, '', 3, '', 4, '', 5, '', 6, '', 7, '', 8, '', 9, 10, ' ')
 
